@@ -10,12 +10,12 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.get('/home', function(request, response) {
-  response.render('pages/index')
+app.get('/', function(request, response) {
+  response.render('pages/inventory')
 });
 
 app.get('/inventory', function(request, response) {
-  response.render('pages/inventory')
+  response.render('pages/index')
 });
 
 
