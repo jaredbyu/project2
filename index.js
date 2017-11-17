@@ -17,6 +17,22 @@ app.get('/inventory', function(request, response) {
   response.render('pages/inventory')
 });
 
+app.get('/inventory/colors', function(request, response) {
+  response.render('pages/colors')
+});
+
+app.get('/inventory/sizes', function(request, response) {
+  response.render('pages/sizes')
+});
+
+app.get('/login', function(request, response) {
+  response.render('pages/login')
+});
+
+app.get('/admin', function(request, response) {
+  response.render('pages/admin')
+});
+
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
