@@ -13,9 +13,9 @@ app.get('/', function(request, response) {
   response.render('pages/index')
 });
 
-/*app.get('/inventory', function(request, response) {
+app.get('/inventory', function(request, response) {
   response.render('pages/inventory')
-});*/
+});
 
 
 app.listen(app.get('port'), function() {
