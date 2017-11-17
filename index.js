@@ -10,12 +10,12 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  response.render('pages/index')
-});
-
-app.get('/inventory', function(request, response) {
   response.render('pages/inventory')
 });
+
+/*app.get('/inventory', function(request, response) {
+  response.render('pages/inventory')
+});*/
 
 
 app.listen(app.get('port'), function() {
