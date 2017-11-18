@@ -1,35 +1,86 @@
 .jumbotron {
-  background: #532F8C;
+  background: #069043;
   color: white;
   padding-bottom: 80px; }
+
   .jumbotron .btn-primary {
-    background: #845ac7;
-    border-color: #845ac7; }
+    background: #47BF5A;
+    border-color: #069043; }
+
     .jumbotron .btn-primary:hover {
-      background: #7646c1; }
+      background: #00FF28; }
+
   .jumbotron p {
-    color: #d9ccee;
+    
     max-width: 75%;
     margin: 1em auto 2em; }
+
   .navbar + .jumbotron {
     margin-top: -20px; }
-  .jumbotron .lang-logo {
-    display: block;
-    background: #B01302;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    border: 2px solid white; }
-    .jumbotron .lang-logo img {
-      max-width: 100%; }
+
 .paper_logo{
-    
     margin: auto;
     width: 30%;
-   
-    padding: 10px;
+    padding: 10px; 
+}
+
+.color_header{
+    margin: auto;
+    width: 30%;
+    padding: 10px; 
     
 }
+
+li{
+    float: left;
+}
+li a{
+      display: block;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.size{
+font-size:200%;    
+    
+}
+
+.color{
+    
+    border: 2px solid;
+    border-color:#5D625E;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+
+}
+
+.red{
+    background-color:red;
+}
+.white{
+    background-color:white;
+}
+.brown{
+    color:brown;
+    background-color:#4B3E04;
+}
+.black{
+    background-color:black;
+}
+.yel{
+    background-color:yellow;
+}
+.green{
+    background-color:green;
+}
+.blue{
+    background-color:blue;
+}
+
 
