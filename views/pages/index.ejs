@@ -2,6 +2,7 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
+    <script src="getPaperTweets.js"></script>
 </head>
 
 <body>
@@ -31,6 +32,12 @@
  
 </div>
 
+    
+    <div onload="getPaperTweets();"></div>
+    <h2>Paper Tweets</h2>
+    <div id="result"></div>
+
+            <ul id="tweets"></ul> 
 
 </body>
 </html>
