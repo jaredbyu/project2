@@ -55,16 +55,34 @@ function getInventory(request, response){
     
     console.log("Getting inventory from db");
     
-    var client = new pg.Client(connectionString);
+    getInventoryFromDb(function(error, result) {
+		// This is the callback function that will be called when the DB is done.
+		// The job here is just to send it back.
+
+		// Make sure we got a row with the person, then prepare JSON to send back
+		if (error || result == null || result.length != 1) {
+			response.status(500).json({success: false, data: error});
+		} else {
+			var person = result[0];
+			response.status(200).json(result[0]);
+		}
+	});
+}
     
-    client.connect(function(err) {
+    
+    
+    function getInventoryFromDb(callback)console.log("Getting person from DB with id: " + id);
+
+	var client = new pg.Client(connectionString);
+
+	client.connect(function(err) {
 		if (err) {
 			console.log("Error connecting to DB: ")
 			console.log(err);
 			callback(err, null);
 		}
 
-		var sql = "SELECT * FROM INVENTORY;
+		var sql = "SELECT * FROM INVENTORY";
 		var params = [id];
 
 		var query = client.query(sql, params, function(err, result) {
@@ -76,24 +94,20 @@ function getInventory(request, response){
 			if (err) {
 				console.log("Error in query: ")
 				console.log(err);
+				callback(null);
 			}
 
 			console.log("Found result: " + JSON.stringify(result.rows));
 
-            
-            if (error || result == null || result.length != 1) {
-			response.status(500).json({success: false, data: error});
-		} else {
-			var person = result[0];
-			response.status(200).json(result[0]);
-		}
-	});
-            
-            
+			// call whatever function the person that called us wanted, giving it
+			// the results that we have been compiling
+			callback(result.rows);
 		});
 	});
+
+
     
-}
+
 
 
 
