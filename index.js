@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
-var router = app.Router();
+
 
 
 var pg = require("pg"); // This is the postgres database connection module.
@@ -51,7 +51,7 @@ app.listen(app.get('port'), function() {
 });
 
 
-router.get('/inventory', function(req, res, next) {
+app.get('/inventory', function(req, res) {
   pg.connect(connectionString, function(err, client, done) {
     if (err) {
       return console.error('error fetching client from pool', err);
@@ -69,7 +69,7 @@ router.get('/inventory', function(req, res, next) {
 
 
 
-module.exports = router;
+
                    
                    
 
