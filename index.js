@@ -71,7 +71,8 @@ function getInventory(request, response){
     
     
     
-    function getInventoryFromDb(callback)console.log("Getting person from DB with id: " + id);
+    function getInventoryFromDb(callback) {
+	console.log("Getting inventory from db");
 
 	var client = new pg.Client(connectionString);
 
@@ -94,17 +95,16 @@ function getInventory(request, response){
 			if (err) {
 				console.log("Error in query: ")
 				console.log(err);
-				callback(null);
+				callback(err, null);
 			}
 
 			console.log("Found result: " + JSON.stringify(result.rows));
 
 			// call whatever function the person that called us wanted, giving it
 			// the results that we have been compiling
-			callback(result.rows);
+			callback(null, result.rows);
 		});
 	});
-
 
     
 
