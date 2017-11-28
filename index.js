@@ -51,13 +51,10 @@ app.listen(app.get('port'), function() {
 
 
 function getPerson(request, response) {
-	// First get the person's id
-	var id = request.query.id;
-
-	// TODO: It would be nice to check here for a valid id before continuing on...
+	
 
 	// use a helper function to query the DB, and provide a callback for when it's done
-	getPersonFromDb(id, function(error, result) {
+	getPersonFromDb(function(error, result) {
 		// This is the callback function that will be called when the DB is done.
 		// The job here is just to send it back.
 
@@ -71,8 +68,8 @@ function getPerson(request, response) {
 	});
 }
 
-function getPersonFromDb(id, callback) {
-    id = 1;
+function getPersonFromDb(callback) {
+    var id = 1;
 	console.log("Getting person from DB with id: " + id);
 
 	var client = new pg.Client(connectionString);
