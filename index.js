@@ -72,6 +72,7 @@ function getPerson(request, response) {
 }
 
 function getPersonFromDb(id, callback) {
+    id = 1;
 	console.log("Getting person from DB with id: " + id);
 
 	var client = new pg.Client(connectionString);
