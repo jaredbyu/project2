@@ -31,30 +31,27 @@
  
  
 </div>
-
-    <p id="demo">HI dude</p>
-    <button onclick="getPaperTweets();">Search</button>
+   
     <h2>Paper Tweets</h2>
-    <div id="result"></div>
-
-            <ul id="tweets"></ul> 
+    <div id="result">
+    <ul id="paperMessages"></ul> 
+    
+    </div>
+ 
 
     <script>
-    
     function getPaperTweets() {
-    
-    document.getElementById("demo").innerHTML = "testing";
-    console.log('function called');
-    
-    $.post("/getPaperTweets", function(result) {
-        if (result) {
-            $("#result").append("<p>Here is the latest Tweet for \"" + 'Paper' + "\".</p>");
-            $("#tweets").append("<li><span style=\"font-weight: bold\">" + result.user + "</span>: " + result.tweets + "</li>");
+    $.post("/searchTweets", function(message) {
+        if (message) {
+            $("#paperMessages").append("<li><span style=\"font-weight: bold\">User: " + message.user + "</span>- " + message.tweets + "</li>");
         }
     })
 }
-    
-    
+       
+window.setInterval(function(){
+  getPaperTweets();
+}, 5000);
+           
     </script>
     
     
