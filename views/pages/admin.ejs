@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="test.js"></script>
   <% include ../partials/header.ejs %>
 </head>
 
@@ -13,17 +15,16 @@
    
     <form action="/completeLogin">
   
+<p>Please enter a movie title to search:</p>
+	<input type="text" id="txtSearch">
+	<button onclick="search();">Search</button>
 
-  <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+	<div id="divResults">
+		<h2>Results</h2>
+		<ul id="ulResults">
+		</ul>
+	</div>
 
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button type="submit">Login</button>
-    
-  </div>
 </form>
 </body>
 </html>
