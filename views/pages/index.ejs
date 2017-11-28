@@ -2,7 +2,7 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
-    <script src="getPaperTweets.js"></script>
+   
 </head>
 
 <body>
@@ -32,12 +32,31 @@
  
 </div>
 
-    
-    <div onload="getPaperTweets();"></div>
+    <p id="demo">HI dude</p>
+    <button onclick="getPaperTweets();">Search</button>
     <h2>Paper Tweets</h2>
     <div id="result"></div>
 
             <ul id="tweets"></ul> 
 
+    <script>
+    
+    function getPaperTweets() {
+    
+    document.getElementById("demo").innerHTML = "testing";
+    console.log('function called');
+    
+    $.post("/getPaperTweets", function(result) {
+        if (result) {
+            $("#result").append("<p>Here is the latest Tweet for \"" + 'Paper' + "\".</p>");
+            $("#tweets").append("<li><span style=\"font-weight: bold\">" + result.user + "</span>: " + result.tweets + "</li>");
+        }
+    })
+}
+    
+    
+    </script>
+    
+    
 </body>
 </html>

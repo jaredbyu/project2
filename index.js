@@ -36,7 +36,7 @@ function getPaperTweets(request, response) {
         count: 1
     }
 
-    T.get('search/tweets', params, function(err, data) {
+    T.get('/getPaperTweets', params, function(err, data) {
         var tweets = data.statuses;
         for (var i = 0; i < tweets.length; i++) {
             //console.log(tweets[i].user.screen_name + ": " + tweets[i].text);
