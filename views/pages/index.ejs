@@ -43,7 +43,7 @@
     function getPaperTweets() {
     $.post("/searchTweets", function(message) {
         if (message) {
-            $("#paperMessages").append("<li><span style=\"font-weight: bold\">User: " + message.user + "</span>- " + message.tweets + "</li>");
+            $("#paperMessages").append("<li><span style=\"font-weight: bold\">User: " + message.user + "</span>- " + message.tweets + "</li><br>");
         }
     })
 }
