@@ -6,24 +6,6 @@ var fs = require("fs");
 //var pg = require("pg"); // This is the postgres database connection module.
 //const connectionString = "postgres://fvwuefqfasxzrd:2c6264dcf58356cb79f1ea31dba32d6409350cd633eebc794edea37fd7997816@ec2-50-19-86-17.compute-1.amazonaws.com:5432/d2ej2fk1d18hm9";
 
-const { Client } = require('pg');
-
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
-
-client.connect();
-
-client.query('SELECT * FROM INVENTORY;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
-});
-
-
 
 app.set('port', (process.env.PORT || 5000));
 
