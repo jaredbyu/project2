@@ -82,9 +82,9 @@ function getPersonFromDb(callback) {
 		}
 
 		var sql = "SELECT * FROM INVENTORY";
-		var params = [id];
+		//var params = [id];
 
-		var query = client.query(sql, params, function(err, result) {
+		var query = client.query(sql, function(err, result) {
 			// we are now done getting the data from the DB, disconnect the client
 			client.end(function(err) {
 				if (err) throw err;
