@@ -51,7 +51,7 @@ app.listen(app.get('port'), function() {
 });
 
 
-function getInventory(request, response){
+/*function getInventory(request, response){
     
     console.log("Getting inventory from db");
     
