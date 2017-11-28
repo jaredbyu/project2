@@ -36,8 +36,16 @@ function getPaperTweets(request, response) {
         count: 1
     }
 
-    T.get('/getPaperTweets', params, function(err, data) {
+    T.get('search/tweets', params, function(err, data) {
+        
+        
+        if (err){
+            console.log("Error");
+        }
+        
+        
         var tweets = data.statuses;
+        
         for (var i = 0; i < tweets.length; i++) {
             //console.log(tweets[i].user.screen_name + ": " + tweets[i].text);
             //console.log(tweets[i]); // displays the whole object returned from Twitter
@@ -46,7 +54,9 @@ function getPaperTweets(request, response) {
         }
         response.json(result);
         //console.log(result);
+        
     });
+
 }
 
 
