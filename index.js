@@ -57,20 +57,8 @@ app.get('/inventory', function(request, response) {
  response.render('pages/inventory')
 });
 
-app.get('/inventory/colors', function(request, response) {
-  response.render('pages/colors')
-});
-
-app.get('/inventory/sizes', function(request, response) {
-  response.render('pages/sizes')
-});
-
-app.get('/login', function(request, response) {
-  response.render('pages/login')
-});
-
-app.get('/admin', function(request, response) {
-  response.render('pages/admin')
+app.get('/checkout', function(request, response) {
+  response.render('pages/checkout')
 });
 
 

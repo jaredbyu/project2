@@ -16,12 +16,14 @@
     </a>
     <h1>Welcome to Brown Town Paper inc.</h1>
     <p><i>"Real buisness is done on paper"</i> - Michael Scott</p>
-      <p>-<b>Quick Search</b>-</p>
-    <a type="button" class="btn btn-lg btn-primary" href="/inventory/colors">
-        By Color</a>
-    <a type="button" class="btn btn-lg btn-primary" href="/inventory/sizes">
-        By Size</a>
+      <p>-<b>Twitter Activation</b>-</p>
+    <button type="button" class="btn btn-lg btn-primary" onclick="changeT()">
+        Start Tweets</button>
+    <button type="button" class="btn btn-lg btn-primary" onclick="changeF()">
+        Stop Tweets</button>
+      <p id ="twitterStatus">Twitter Flow Currently: Active</p>
   </div>
+
 </div>
 <div class="container">
   <div class="alert alert-info text-center" role="alert">
@@ -40,18 +42,38 @@
  
 
     <script>
+        var getTweets = true;
+        
+                
     function getPaperTweets() {
+        
+        
     $.post("/searchTweets", function(message) {
+        if(getTweets)
         if (message) {
             $("#paperMessages").append("<li><span style=\"font-weight: bold\">User: " + message.user + "</span>- " + message.tweets + "</li><br>");
+            
         }
     })
+    
 }
+       function changeT(){ 
+           getTweets = true;
+           document.getElementById("twitterStatus").innerHTML = "Twitter Flow Currently: Active";
+       }
+        
+       function changeF(){
+           getTweets = false;
+           document.getElementById("twitterStatus").innerHTML = "Twitter Flow Currently: Inactive";
+       }
+        
        
 window.setInterval(function(){
   getPaperTweets();
-}, 5000);
-           
+    
+   
+}, 4000);
+     
     </script>
     
     

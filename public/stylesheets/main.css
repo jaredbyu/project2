@@ -24,10 +24,13 @@
     padding: 10px; 
 }
 
-
-li{
-    float: left;
+.inventory{
+    float:left;
+    font-size:150%;
+    width:40%;
+    padding:20px;
 }
+
 li a{
       display: block;
     text-align: center;
