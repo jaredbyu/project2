@@ -2,6 +2,8 @@ var express = require('express');
 var app = express();
 var fs = require("fs");
 var Twit = require('twit');
+var http = require('http');
+var url = require('url');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -58,7 +60,12 @@ app.get('/inventory', function(request, response) {
 });
 
 app.get('/checkout', function(request, response) {
-  response.render('pages/checkout')
+    getInfo(request, response);
+ // response.render('pages/checkout')
+});
+
+app.get('/thankyou', function(request, response) { 
+ response.render('pages/thankyou')
 });
 
 
@@ -68,10 +75,28 @@ app.listen(app.get('port'), function() {
 
 
 
+function getInfo(request, response) {
+    var getUrl = url.parse(request.url, true);
+    var type = getUrl.query.type;
+    
+    var amount = Number(getUrl.query.amount);
+    var color = getUrl.query.color;
+
+    calculateRate(response, type, amount, color);
+}
 
 
+function calculateRate(response, type, amount, color) {
+    var cost = 10.0;
+    
+    
+    
+    var amount = amount.toString();
+    
+    var package = {type: type, amount: amount, cost: cost, color: color};
 
-
+    response.render('pages/checkout', package);
+}
                    
                    
 

@@ -13,41 +13,38 @@
    
     <br>
     
-    
-    <div class="inventory">
-        Common Products
-        <ul>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-
-        </ul>
-    </div>
-    
-      <div class="inventory">
-        Common Products
-        <ul>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-            <li><span>Product Quantity: </span><input type="text"></li>
-        </ul>
-    </div>
-    
-    <a href="/checkout" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-shopping-cart"></span> Checkout
-        </a>
-
+   <div class="center">
+   <form action="/checkout" method="get">
+              Quantity:
+            <input type="text" name="amount">
+            <br><br>
+            Select Type: 
+            <select name="type">
+                <option>Bond</option>
+                <option>Newsprint</option>
+                <option>Card Stock</option>
+                <option>Construction Paper</option>
+                <option>Offset</option>
+                <option>Ledger</option>
+                <option>Index</option>
+                <option>Cover</option>
+            </select>
+       
+        <select name="color">
+                <option>White</option>
+                <option>Green</option>
+                <option>Red</option>
+                <option>Black</option>
+                <option>Yellow</option>
+                <option>Blue</option>
+                <option>Brown</option>
+            </select>
+            <br><br>
+       <button type="submit" value="Submit" class="btn btn-info btn-lg">
+       <span class="glyphicon glyphicon-shopping-cart"></span> Checkout
+       </button>
+       
+        </form>
+       </div>
 </body>
 </html>
