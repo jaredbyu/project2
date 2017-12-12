@@ -23,15 +23,55 @@
         Stop Tweets</button>
       <p id ="twitterStatus">Twitter Flow Currently: Active</p>
   </div>
-
+    
+    
+    
 </div>
 <div class="container">
   <div class="alert alert-info text-center" role="alert">
     All new customers will recive a 10% discount! 
   </div>
   <hr>
- 
- 
+     <div class="center">
+       
+   <form action="/checkout" method="get">
+            <h1>Quick Checkout</h1>
+            <br>
+            Select Type: 
+            <select name="type">
+                <option>Bond</option>
+                <option>Newsprint</option>
+                <option>Card Stock</option>
+                <option>Construction Paper</option>
+                <option>Offset</option>
+                <option>Ledger</option>
+                <option>Index</option>
+                <option>Cover</option>
+            </select>
+       
+        <select name="color">
+                <option>White</option>
+                <option>Green</option>
+                <option>Red</option>
+                <option>Black</option>
+                <option>Yellow</option>
+                <option>Blue</option>
+                <option>Brown</option>
+            </select>
+            <br><br>
+         Quantity In Boxes:
+            <input type="text" name="amount">
+       <br><br>
+       <button type="submit" value="Submit" class="btn btn-info btn-lg">
+       <span class="glyphicon glyphicon-shopping-cart"></span> Checkout
+       </button>
+       
+        </form>
+       </div>
+    
+    
+    
+    
 </div>
    
     <h2>Paper Tweets</h2>

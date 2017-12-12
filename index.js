@@ -87,7 +87,7 @@ function getInfo(request, response) {
 
 
 function calculateRate(response, type, amount, color) {
-    var cost = 10.0;
+    var cost = 100.0;
     
     
     

@@ -8,16 +8,13 @@
 
   <% include ../partials/nav.ejs %>
 
-    
-    <h1>Inventory</h1>
-   
     <br>
     
    <div class="center">
+       
    <form action="/checkout" method="get">
-              Quantity In Boxes:
-            <input type="text" name="amount">
-            <br><br>
+            <h1>Inventory</h1>
+            <br>
             Select Type: 
             <select name="type">
                 <option>Bond</option>
@@ -40,11 +37,69 @@
                 <option>Brown</option>
             </select>
             <br><br>
+         Quantity In Boxes:
+            <input type="text" name="amount">
+       <br><br>
        <button type="submit" value="Submit" class="btn btn-info btn-lg">
        <span class="glyphicon glyphicon-shopping-cart"></span> Checkout
        </button>
        
         </form>
        </div>
+    
+    <table style="width:65%">
+    <tr>
+        <th>Style</th>
+        <th>Example</th>
+        <th>Price Per Box</th>
+    </tr>
+    <tr>
+        <th>Bond</th>
+        <th><img src="img/bond.jpg" alt="bond.jpg"></th>
+        <th>$30</th>
+    </tr>
+        <tr>
+        <th>Newsprint</th>
+        <th><img src="img/newsprint.jpg" alt="Paper"></th>
+        <th>$30</th>
+    </tr>
+        <tr>
+        <th>Card Stock</th>
+        <th><img src="img/cardstock.jpg" alt="Paper"></th>
+        <th>$30</th>
+    </tr>
+        <tr>
+        <th>Construction</th>
+        <th><img src="img/construction.jpg" alt="Paper"></th>
+        <th>$30</th>
+    </tr>
+        <tr>
+        <th>Offset</th>
+        <th><img src="img/offset.jpg" alt="Paper"></th>
+        <th>$30</th>
+    </tr>
+        <tr>
+        <th>Ledger</th>
+        <th><img src="img/ledger.jpg" alt="Paper"></th>
+        <th>$30</th>
+    </tr>
+        <tr>
+        <th>Index</th>
+        <th><img src="img/index.jpg" alt="Paper"></th>
+        <th>$30</th>
+    </tr>
+        <tr>
+        <th>Cover</th>
+        <th><img src="img/cover.jpg" alt="Paper"></th>
+        <th>$30</th>
+    </tr>
+    
+    
+    
+    
+    </table>
+    
+  
+    
 </body>
 </html>
